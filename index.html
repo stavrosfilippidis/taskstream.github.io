@@ -4,35 +4,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Pages Test</title>
+  <title>Taskstream – Cloud's Control Unit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      color: #333;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      color: #00e6e6;
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
       text-align: center;
+      padding: 4rem 2rem;
     }
 
     h1 {
-      color: #007acc;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
 
-    .container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      display: inline-block;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    p {
+      font-size: 1.2rem;
+      color: #99ffff;
+    }
+
+    .diagram {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .engine {
+      width: 600px;
+      height: 400px;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      fill: #00ffff;
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+      transform-origin: center;
+    }
+
+    @keyframes pulse {
+      0% {
+        r: 5;
+        opacity: 1;
+      }
+
+      50% {
+        r: 15;
+        opacity: 0.4;
+      }
+
+      100% {
+        r: 5;
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>🚀 Hello from GitHub Pages!</h1>
-    <p>If you're seeing this, your static site is live! 🎉</p>
-    <p>Edit <code>index.html</code> and push to update this page.</p>
+  <div class="hero">
+    <h1>Taskstream</h1>
+    <p>The Engine Control Unit for Your Cloud</p>
+    <p><em>Monitor. Decide. Act. – Automatically.</em></p>
+  </div>
+
+  <div class="diagram">
+    <svg class="engine" viewBox="0 0 600 400">
+      <!-- Condition Nodes -->
+      <circle cx="100" cy="100" r="10" fill="#00ffcc" />
+      <text x="60" y="90" class="label">Time</text>
+      <circle cx="100" cy="300" r="10" fill="#00ffcc" />
+      <text x="50" y="320" class="label">Traffic</text>
+
+      <!-- Action Node -->
+      <circle cx="300" cy="200" r="15" fill="#00ffff" class="pulse" />
+      <text x="270" y="190" class="label">Taskstream Engine</text>
+
+      <!-- Assets -->
+      <rect x="500" y="100" width="50" height="30" fill="#0033cc" />
+      <text x="480" y="95" class="label">RDS</text>
+
+      <rect x="500" y="250" width="50" height="30" fill="#6600cc" />
+      <text x="480" y="245" class="label">ECS</text>
+
+      <!-- Lines -->
+      <line x1="100" y1="100" x2="300" y2="200" stroke="#00ffff" stroke-width="2" />
+      <line x1="100" y1="300" x2="300" y2="200" stroke="#00ffff" stroke-width="2" />
+      <line x1="300" y1="200" x2="500" y2="115" stroke="#00ffff" stroke-width="2" />
+      <line x1="300" y1="200" x2="500" y2="265" stroke="#00ffff" stroke-width="2" />
+    </svg>
+  </div>
+
+  <div class="hero">
+    <p>Give your cloud an adaptive nervous system. Configure behaviors with simple YAML, and let Taskstream take care of
+      the rest.</p>
+    <p><code>when: traffic > 80%</code> → <code>scale: ecs-service</code></p>
+    <p><code>when: time = night</code> → <code>action: stop-db</code></p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Taskstream. Made with ☁️ and ⚙️
   </div>
 </body>
 
